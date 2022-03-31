@@ -1,28 +1,25 @@
 .main-container{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    background-color:#e3e7eb;
-    padding: 10px;
-    border-radius: 2px;
-}
-.main-content{
-    display: flex;
-    flex-direction: column;
-}
-.main-content > h5{
-    align-self: center;
-    font-size: 25px;
-    font-weight: 700;
-    margin-bottom: 30px;
-}
-.main-content > *:not(:last-child){
+    margin-top: 10px;
     margin-bottom: 10px;
 }
-.main-content > p{
-    font-size: 18px;
-    line-height: 110%;
+.actions{
+    display: flex;
+}
+.actions > .action{
+    background-color: #c9cdd1;
+    padding: 2px 5px 2px 5px;
+    cursor: pointer;
+}
+.actions > .active{
+    background-color: #e3e7eb;
+}
+.actions > .action:not(:first-child){
     margin-left: 10px;
 }
-.main-content > ul > li{
-    margin-left: 10px;
+.works{
+    padding: 5px;
+    background-color: #e3e7eb;
+}
+.works > .work:not(:first-child){
+    margin-top: 5px;
 }
