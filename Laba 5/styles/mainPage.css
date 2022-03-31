@@ -23,3 +23,12 @@
 .works > .work:not(:first-child){
     margin-top: 5px;
 }
+.append-panel{
+    display: none;
+    padding: 5px;
+    background-color: #e3e7eb;
+}
+.append-panel > input{
+    outline: none;
+    padding: 2px;
+}
