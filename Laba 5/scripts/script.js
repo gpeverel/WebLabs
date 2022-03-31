@@ -5,20 +5,13 @@ $(function(){
      "Ответить на электронные письма", 
      "Подготовиться к лекции в понедельник", 
      "Обновить несколько новых задач", "Купить продукты" ];
-     function makeActionActive(actionNumber){
-         const selector = '.action:nth-child(' + actionNumber + ')'
-         $('.action').removeClass("active")
-         $(selector).addClass("active")
-         $('.works').empty()
-     }
-    $('.action:nth-child(1)').on('click', function(){
-        makeActionActive(1)
-    })
-    $('.action:nth-child(2)').on('click', function(){
-        makeActionActive(2)
-    })
-    $('.action:nth-child(3)').on('click', function(){
-        makeActionActive(3)
-    })
+    for(let i = 1; i <= 3;i++ ){
+        const selector = '.action:nth-child(' + i + ')'
+        $(selector).on('click', function(){
+            $('.action').removeClass("active")
+            $(this).addClass("active")
+            $('.works').empty()
+        }) 
+    }
 
 })
