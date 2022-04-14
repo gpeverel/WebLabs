@@ -25,7 +25,7 @@ function main(toDoObjects){
             }
         }) 
     }
-    function organizeByTags(toDoObjects){
+    function organizeByTags(){
         let tags = []
         toDoObjects.forEach(toDo => {
             toDo.tags.forEach(tag => {
@@ -46,7 +46,28 @@ function main(toDoObjects){
         return resultObjects;
     }
     function addWorksWithTag(){
-
+        let works = $('.works')
+        let orginizedToDoObjects = organizeByTags();
+        orginizedToDoObjects.forEach(toDo => {
+            if(toDo.toDos.length !== 0){
+                works.append(createWorkWithTag(toDo))
+            }
+        });
+    }
+    function createWorkWithTag(toDo){
+        const work = $('<div>',{
+            class:'work-with-tag'
+        }).append($('<h3>',{
+            class:'work-tag',
+            text:toDo.tag
+        }))
+        toDo.toDos.forEach(element => {
+            work.append($('<span>',{
+                class:'work-description',
+                text:element
+            }))
+        });
+        return work
     }
     function addWorks(index){
         let works = $('.works')
