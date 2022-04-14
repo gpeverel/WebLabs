@@ -7,7 +7,8 @@ function main(toDoObjects){
      addWorks(1)
      $('.append-button').on('click', function(){
          const newWork = $('.append-input').val()
-         toDoObjects.push(newWork)
+         const tags = $('.tags-input').val().split(",")
+         toDoObjects.push({description:newWork, tags})
      })
     for(let i = 1; i <= 4;i++ ){
         const selector = '.action:nth-child(' + i + ')'
