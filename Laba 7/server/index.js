@@ -1,7 +1,11 @@
 const express = require('express')
 const app = express();
+const cors = require('cors');
 let PORT = 5300
-app.use(express.json());
+app.use(cors({
+    origin: '*'
+}))
+  app.use(express.json());
 
 let State =
 [ { "description" : "Купить продукты", "tags" : [ "шопинг", "рутина" ] },
@@ -14,8 +18,10 @@ let State =
 app.get('/toDos', function(req,res){
     res.json(State)
 })
-app.post('/toDos', function(res, req){
-    State.push(req.body)
+app.post('/toDos', function(req,res){
+    const {tags, description} = req.body
+    State.push({tags, description})
+    console.log(State)
     res.json("SUCCESS")
 })
 app.listen(PORT)

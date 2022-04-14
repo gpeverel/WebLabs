@@ -9,7 +9,18 @@ function main(toDoObjects){
      $('.append-button').on('click', function(){
          const newWork = $('.append-input').val()
          const tags = $('.tags-input').val().split(",")
-         toDoObjects.push({description:newWork, tags})
+         $.ajax({
+            type: "POST",
+            url: baseUrl + "/toDos",
+            data: JSON.stringify({tags, description:newWork}),
+            dataType : 'json',
+            headers: {
+                "Content-Type": "application/json"
+            },
+          }).then((data) =>{
+            console.log(data)
+            toDoObjects.push({description:newWork, tags})
+          })
      })
     for(let i = 1; i <= 4;i++ ){
         const selector = '.action:nth-child(' + i + ')'
