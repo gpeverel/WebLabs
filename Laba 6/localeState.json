@@ -1,52 +1,6 @@
-{
-    "EndedBooksData":[
-            {
-                "image":"http://127.0.0.1:5500/images/booksImages/2.jpg",
-                "bookInfoData":[
-                                {
-                                    "name":"Автор",
-                                    "content":"Author"
-                                }
-                            ],
-                "audio":"http://127.0.0.1:5500/audio/1.mp3",
-                "genres": ["Фантастика", "Приключение"]
-            },
-            {
-                "image":"http://127.0.0.1:5500/images/booksImages/2.jpg",
-                "bookInfoData":[
-                                {
-                                    "name":"Автор",
-                                    "content":"Author"
-                                }
-                            ],
-                "audio":"http://127.0.0.1:5500/audio/1.mp3",
-                "genres": ["Фантастика", "Фэнтези"]
-            }
-        ],
-        "EndingBooksData":[
-            {
-                "image":"http://127.0.0.1:5500/images/booksImages/2.jpg",
-                "bookInfoData":[
-                                {
-                                    "name":"Автор",
-                                    "content":"Author2"
-                                }
-                            ],
-                "audio":"http://127.0.0.1:5500/audio/1.mp3",
-                "genres": ["Фантастика", "Фэнтези"]
-            }
-        ],
-        "NewBooksData":[
-            {
-                "image":"http://127.0.0.1:5500/images/booksImages/2.jpg",
-                "bookInfoData":[
-                                {
-                                    "name":"Автор",
-                                    "content":"Author3"
-                                }
-                            ],
-                "audio":"http://127.0.0.1:5500/audio/1.mp3",
-                "genres": ["Приключение"]
-            }
-        ]
-    }
+[ { "description" : "Купить продукты", "tags" : [ "шопинг", "рутина" ] },
+ { "description" : "Сделать несколько новых задач", "tags" : [ "писательство", "работа" ] },
+{ "description" : "Подготовиться к лекции в понедельник", "tags" : [ "работа", "преподавание" ] },
+ { "description" : "Ответить на электронные письма", "tags" : [ "работа" ] },
+  { "description" : "Вывести Грейси на прогулку в парк", "tags" : [ "рутина", "питомцы" ]},
+{ "description" : "Закончить писать книгу", "tags" : [ "писательство", "работа" ] } ]

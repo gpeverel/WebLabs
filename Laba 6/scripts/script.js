@@ -1,38 +1,39 @@
-
 $(function(){
-    var toDos = [ "Закончить писать эту книгу",
-     "Вывести Грейси на прогулку в парк", 
-     "Ответить на электронные письма", 
-     "Подготовиться к лекции в понедельник", 
-     "Обновить несколько новых задач", "Купить продукты" ];
+    $.getJSON("../localeState.json", function(toDoObjects){
+        main(toDoObjects)
+    })
+})
+function main(toDoObjects){
      addWorks(1)
      $('.append-button').on('click', function(){
          const newWork = $('.append-input').val()
-         toDos.push(newWork)
+         toDoObjects.push(newWork)
      })
-    for(let i = 1; i <= 3;i++ ){
+    for(let i = 1; i <= 4;i++ ){
         const selector = '.action:nth-child(' + i + ')'
         $(selector).on('click', function(){
             $('.action').removeClass("active")
             $(this).addClass("active")
             $('.works').empty()
             hideWorkPanel()
-            if(i !== 3){
+            if(i < 3){
                 addWorks(i)
-            }else{
+            }else if(i === 4){
                 openWorkPanel()
+            }else{
+
             }
         }) 
     }
     function addWorks(index){
         let works = $('.works')
         if(index === 1){
-            for(let i = toDos.length - 1; i > -1; i--){
-                works.append(createWork(toDos[i]))
+            for(let i = toDoObjects.length - 1; i > -1; i--){
+                works.append(createWork(toDoObjects[i].description))
             }
         }else{
-            for(let i = 0; i < toDos.length; i++){
-                works.append(createWork(toDos[i]))
+            for(let i = 0; i < toDoObjects.length; i++){
+                works.append(createWork(toDoObjects[i].description))
             }
         }
     }
@@ -50,4 +51,4 @@ $(function(){
         $('.append-panel').css("display", 'none')
     }
 
-})
+}
