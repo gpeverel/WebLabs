@@ -1,0 +1,48 @@
+.main-container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.actions{
+    display: flex;
+}
+.actions > .action{
+    background-color: #c9cdd1;
+    padding: 2px 5px 2px 5px;
+    cursor: pointer;
+}
+.actions > .active{
+    background-color: #e3e7eb;
+}
+.actions > .action:not(:first-child){
+    margin-left: 10px;
+}
+.works{
+    padding: 5px;
+    background-color: #e3e7eb;
+}
+.works > .work:not(:first-child){
+    margin-top: 5px;
+}
+.append-panel{
+    display: none;
+    padding: 5px;
+    background-color: #e3e7eb;
+}
+.append-panel > input{
+    outline: none;
+    padding: 2px;
+}
+.works > .work-with-tag{
+    display: flex;
+    flex-direction: column;
+}
+.works > .work-with-tag:not(:first-child){
+    margin-top: 14px;
+}
+.works > .work-with-tag > span{
+    margin-left: 5px;
+    margin-top: 4px;
+}
+.works > .work-with-tag > h3{
+    font-weight: 1000;
+}
