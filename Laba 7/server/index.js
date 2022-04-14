@@ -14,4 +14,8 @@ let State =
 app.get('/toDos', function(req,res){
     res.json(State)
 })
+app.post('/toDos', function(res, req){
+    State.push(req.body)
+    res.json("SUCCESS")
+})
 app.listen(PORT)

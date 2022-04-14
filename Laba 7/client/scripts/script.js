@@ -1,5 +1,6 @@
+const baseUrl = 'http://localhost:5300'
 $(function(){
-    $.getJSON("../localeState.json", function(toDoObjects){
+    $.get(baseUrl + '/toDos', function(toDoObjects){
         main(toDoObjects)
     })
 })
