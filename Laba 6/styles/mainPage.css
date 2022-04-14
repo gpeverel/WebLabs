@@ -32,3 +32,17 @@
     outline: none;
     padding: 2px;
 }
+.works > .work-with-tag{
+    display: flex;
+    flex-direction: column;
+}
+.works > .work-with-tag:not(:first-child){
+    margin-top: 14px;
+}
+.works > .work-with-tag > span{
+    margin-left: 5px;
+    margin-top: 4px;
+}
+.works > .work-with-tag > h3{
+    font-weight: 1000;
+}
