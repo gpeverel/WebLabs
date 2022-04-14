@@ -21,9 +21,32 @@ function main(toDoObjects){
             }else if(i === 4){
                 openWorkPanel()
             }else{
-
+                addWorksWithTag()
             }
         }) 
+    }
+    function organizeByTags(toDoObjects){
+        let tags = []
+        toDoObjects.forEach(toDo => {
+            toDo.tags.forEach(tag => {
+                if(tags.indexOf(tag) === -1){
+                    tags.push(tag)
+                }
+            });
+        });
+        let resultObjects = tags.map(tag => {
+        let toDoObjectsWithTags = []
+            toDoObjects.forEach(toDo => {
+                if(toDo.tags.indexOf(tag) !== -1){
+                    toDoObjectsWithTags.push(toDo.description)
+                }
+            });
+            return {tag, toDos:toDoObjectsWithTags}
+        });
+        return resultObjects;
+    }
+    function addWorksWithTag(){
+
     }
     function addWorks(index){
         let works = $('.works')
