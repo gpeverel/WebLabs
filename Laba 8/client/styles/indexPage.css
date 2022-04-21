@@ -1,0 +1,28 @@
+.main-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color:#e3e7eb;
+    padding: 10px;
+    border-radius: 2px;
+}
+.main-content{
+    display: flex;
+    flex-direction: column;
+}
+.main-content > h5{
+    align-self: center;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.main-content > *:not(:last-child){
+    margin-bottom: 10px;
+}
+.main-content > p{
+    font-size: 18px;
+    line-height: 110%;
+    margin-left: 10px;
+}
+.main-content > ul > li{
+    margin-left: 10px;
+}
