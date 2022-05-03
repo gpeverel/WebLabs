@@ -1,0 +1,22 @@
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e3e7eb;
+    padding:10px;
+}
+.footer-contacts > .contact > img{
+    width: 25px;
+}
+.footer-contacts > .contact:not(:last-child){
+    margin-right: 10px;
+}
+.footer-contacts > .header-contacts{
+    margin-bottom: 10px;
+}
+.footer-container > .sitemap{
+    display: flex;
+}
+.footer-container > .sitemap > *:not(:first-child){
+    margin-left: 10px;
+}
