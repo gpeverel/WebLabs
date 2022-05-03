@@ -1,13 +1,19 @@
+require("./db")
+require('./models/user')
 const express = require('express')
 const app = express();
 const cors = require('cors');
 const mongoose = require("mongoose");
+const userController = require('./controllers/userController')
 let PORT = 5300
 let toDos
 app.use(cors({
     origin: '*'
 }))
-  app.use(express.json());
+app.use(express.json());
+app.get('/user', userController.getAll);
+app.post('/user', userController.add);
+app.delete('/user', userController.delete);
 
 app.get('/toDos', function(req,res){
     toDos.find({}, function(err,data){
