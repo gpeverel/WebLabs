@@ -1,4 +1,3 @@
-let books = require('../models/books')
 const user = require("../models/user")
 
 
@@ -15,10 +14,10 @@ class userController {
     }
     async add(req, res, next) {
         let username = req.body.username
-        console.log(req.body)
+        console.log("addUsers")
         if(username){
             let newUser = new user({
-                username:username
+                username
             })
             newUser.save(function(err,data){
                 if(!err){
