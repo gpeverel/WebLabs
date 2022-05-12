@@ -6,12 +6,10 @@ class toDosController {
     async getAll(req, res, next) {
         const {username} = req.query
         console.log(username)
-        user.find({username}, function(err, data){
-            if(err){
-                res.json(500,"Пользователь не найден")
-            }else {
-                console.log(data)
-                toDos.find({owner: data[0]._id}, function (err, data) {
+        const findedUser = await user.findOne({username})
+        if (findedUser) {
+
+                toDos.find({owner: findedUser._id}, function (err, data) {
                     console.log(data)
                     if (!err) {
                         res.json(data)
@@ -19,18 +17,17 @@ class toDosController {
                         res.status(500).json("ERROR")
                     }
                 })
-            }
-        })
-
+        }
+        else {
+            res.json([])
+        }
     }
     async add(req, res, next) {
         const {tags, description, username} = req.body
-        user.find({username}, function(err, data){
-            if(err){
-                res.status(500).json("Пользователь не найден")
-            }else {
+        const findedUser = user.findOne({username})
+        if (findedUser) {
                 let newToDo = new toDos({
-                    description, tags, owner:data[0]._id
+                    description, tags, owner:findedUser._id
                 })
                 newToDo.save(function(err,result){
                     if(!err){
@@ -39,9 +36,10 @@ class toDosController {
                         res.status(500).json("ERROR")
                     }
                 })
-            }
-        })
-
+        }
+        else {
+            res.json([])
+        }
     }
     async delete(req, res, next) {
         const {username, id} = req.body

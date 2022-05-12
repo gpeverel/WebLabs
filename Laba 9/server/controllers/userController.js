@@ -1,5 +1,5 @@
+const toDos = require("../models/toDos")
 const user = require("../models/user")
-
 
 class userController {
     async getAll(req, res, next) {
@@ -36,7 +36,7 @@ class userController {
             user.findByIdAndDelete(id, function(err, data){
                 console.log(data)
                 if(!err && data.length !== 0){
-                    books.deleteMany({owner:id}, function(err, data){
+                    toDos.deleteMany({owner:id}, function(err, data){
                         if(!err){
                             res.json("Success")
                         }else{
